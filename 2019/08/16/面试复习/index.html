@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面试复习 | 不甘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。 比如列表的extend() 方法参数可以是列表、元祖字典、字符串、生成器、只要他是可迭代的 对多进程，多线程，协程的理解 一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。 线程是cpu调度的最小单位，线程必须依赖进程存在，线程间可以共享数据。 协程是一种轻量级的线程，协程的调度完全由用户控">
+  <meta name="description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试复习">
 <meta property="og:url" content="http://yoursite.com/2019/08/16/面试复习/index.html">
 <meta property="og:site_name" content="不甘">
-<meta property="og:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。 比如列表的extend() 方法参数可以是列表、元祖字典、字符串、生成器、只要他是可迭代的 对多进程，多线程，协程的理解 一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。 线程是cpu调度的最小单位，线程必须依赖进程存在，线程间可以共享数据。 协程是一种轻量级的线程，协程的调度完全由用户控">
+<meta property="og:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。">
 <meta property="og:locale" content="zh_cn">
-<meta property="og:updated_time" content="2019-08-16T14:49:47.381Z">
+<meta property="og:updated_time" content="2019-08-16T15:19:38.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试复习">
-<meta name="twitter:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。 比如列表的extend() 方法参数可以是列表、元祖字典、字符串、生成器、只要他是可迭代的 对多进程，多线程，协程的理解 一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。 线程是cpu调度的最小单位，线程必须依赖进程存在，线程间可以共享数据。 协程是一种轻量级的线程，协程的调度完全由用户控">
+<meta name="twitter:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。">
   
     <link rel="alternative" href="/atom.xml" title="不甘" type="application/atom+xml">
   
@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h4><p>我们不关心对象的类型，只关心对象的行为。</p>
+        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h4><p>我们不关心对象的类型，只关心对象的行为。<a id="more"></a></p>
 <p>比如列表的extend() 方法参数可以是列表、元祖字典、字符串、生成器、只要他是可迭代的</p>
 <h4 id="对多进程，多线程，协程的理解"><a href="#对多进程，多线程，协程的理解" class="headerlink" title="对多进程，多线程，协程的理解"></a>对多进程，多线程，协程的理解</h4><ol>
 <li>一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。</li>
@@ -195,15 +195,14 @@
 <li>非阻塞：程序不会卡住</li>
 <li>同步异步针对多任务而言，阻塞，非阻塞针对代码执行而言</li>
 </ol>
-<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><ol start="0">
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><ol>
 <li><p>作用：在不修改函数代码的情况下添加新的功能。</p>
 </li>
 <li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @functools.wraps(func)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        res = func(*args, **kwargs)</span><br><span class="line">        print(<span class="string">'耗时：&#123;&#125;'</span>.format(time.time() - start_time))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test()</span><br><span class="line">    print(test.__name__)</span><br></pre></td></tr></table></figure>
 
 <p>@timer 语法糖 做的是  test=timer(test)</p>
 </li>
-<li><p>带参数装饰器</p>
-<p>在上面装饰器上在套一层接收参数返回装饰器。</p>
+<li><p>带参数装饰器，在上面装饰器上在套一层接收参数返回装饰器。</p>
 </li>
 </ol>
 <h4 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h4><ol>
