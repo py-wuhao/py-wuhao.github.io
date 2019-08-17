@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="不甘">
 <meta property="og:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。">
 <meta property="og:locale" content="zh_cn">
-<meta property="og:updated_time" content="2019-08-16T15:19:38.755Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/16/面试复习/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0.assets/scrapy%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
+<meta property="og:updated_time" content="2019-08-17T04:12:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试复习">
 <meta name="twitter:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/16/面试复习/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0.assets/scrapy%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
   
     <link rel="alternative" href="/atom.xml" title="不甘" type="application/atom+xml">
   
@@ -217,7 +219,128 @@
 <li>yield作用，保存当前状态，暂停执行，将yield后面的 值作为返回值返回</li>
 <li>生成器可以节省内存空间，边循环，边计算</li>
 </ol>
-<h3 id="Scrapy"><a href="#Scrapy" class="headerlink" title="Scrapy"></a>Scrapy</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><h4 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h4><h4 id="分布式实现原理"><a href="#分布式实现原理" class="headerlink" title="分布式实现原理"></a>分布式实现原理</h4><h3 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h3><h4 id="MVT"><a href="#MVT" class="headerlink" title="MVT"></a>MVT</h4><h4 id="RestFul"><a href="#RestFul" class="headerlink" title="RestFul"></a>RestFul</h4><h4 id="与其他框架对比"><a href="#与其他框架对比" class="headerlink" title="与其他框架对比"></a>与其他框架对比</h4><h4 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h4><h3 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h3><h4 id="curd"><a href="#curd" class="headerlink" title="curd"></a>curd</h4><h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><h3 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h4 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h4>
+<h3 id="Scrapy"><a href="#Scrapy" class="headerlink" title="Scrapy"></a>Scrapy</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ol>
+<li>运行机制：爬虫组件从start_url里获取第一批请求，请求由引擎交给调度器入请求队列，获取完毕后，调度器将请求队列里的请求交给下载器去获取请求对应的响应资源，并将响应交给自己编写的解析方法做提取处理：<ol>
+<li>如果是需要的数据，交给管道处理。</li>
+<li>如果是url，可以继续构造请求，并由引擎交给调度器入队列，直到请求队列里面没有请求，程序结束。</li>
+</ol>
+</li>
+<li>scrapy流程图<img src="%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0.assets/scrapy%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt="scrapy流程图"></li>
+</ol>
+<h4 id="发送Post请求"><a href="#发送Post请求" class="headerlink" title="发送Post请求"></a>发送Post请求</h4><p>使用FormRequest</p>
+<h4 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h4><p>通知事件发生，执行回调函数。</p>
+<p>内置信号 ：</p>
+<ol>
+<li>spider_close 爬虫关闭信号</li>
+<li>spider_opened 开始爬取信号</li>
+<li>engine_started 引擎启动信号</li>
+<li>engine_stopped 引擎停止信号</li>
+<li>其他参考文档</li>
+</ol>
+<h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><h5 id="对响应数据去重"><a href="#对响应数据去重" class="headerlink" title="对响应数据去重"></a>对响应数据去重</h5><ol>
+<li>对数据使用md5生成指纹，使用集合存储指纹。</li>
+<li>如果数据量特别大亿级别，可以使用布隆过滤器，布隆过滤器原理，使用多种算法对数据取余将对应位置1。</li>
+<li>simhash 将数据压缩为8字节，根据海明距离判断文本相似度。</li>
+</ol>
+<h5 id="对请求去重"><a href="#对请求去重" class="headerlink" title="对请求去重"></a>对请求去重</h5><ol>
+<li>将url，请求头，body一起hash计算得到指纹，使用集合结构去重。</li>
+</ol>
+<h4 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h4><h5 id="下载中间件"><a href="#下载中间件" class="headerlink" title="下载中间件"></a>下载中间件</h5><ol>
+<li>process_request  对于通过下载中间件的每个请求调用此方法，可以添加请求头，和代理</li>
+<li>process_respone 通过下载中间件的每个响应调用此方法</li>
+</ol>
+<h5 id="爬虫中间件"><a href="#爬虫中间件" class="headerlink" title="爬虫中间件"></a>爬虫中间件</h5><ol>
+<li>process_spider_input 通过爬虫中间件的每个响应都会调用此方法</li>
+<li>process_spider_output 处理完响应后调用此方法</li>
+</ol>
+<h4 id="分布式实现"><a href="#分布式实现" class="headerlink" title="分布式实现"></a>分布式实现</h4><h5 id="scrapy-redis是scrapy的一个组件"><a href="#scrapy-redis是scrapy的一个组件" class="headerlink" title="scrapy_redis是scrapy的一个组件"></a>scrapy_redis是scrapy的一个组件</h5><h5 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h5><ol>
+<li>ip</li>
+<li>带宽</li>
+<li>cup</li>
+<li>io</li>
+</ol>
+<h3 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h3><ol>
+<li>创建项目命令 django-admin startproject 项目名</li>
+<li>创建应用 django-admin startapp 应用名</li>
+<li>目录结构：<ol>
+<li>manage.py 是项目运行的入口，指定配置文件路径</li>
+<li>与项目同名目录，包含项目配置文件<ol>
+<li>settings.py  项目配置文件</li>
+<li>urls.py 项目url配置文件</li>
+<li>wsgi.py django框架与web服务器间的接口，部署是用到</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="MVC-MVT"><a href="#MVC-MVT" class="headerlink" title="MVC,MVT"></a>MVC,MVT</h4><h5 id="mvc"><a href="#mvc" class="headerlink" title="mvc:"></a>mvc:</h5><ol>
+<li>m:模型，负责和数据库交互</li>
+<li>view：视图，负责产生html页面</li>
+<li>c:控制器，负责接收请求，进行处理，与m和v交互，返回响应</li>
+</ol>
+<h5 id="mvt："><a href="#mvt：" class="headerlink" title="mvt："></a>mvt：</h5><ol>
+<li>m：也是模型，负责与数据库交互</li>
+<li>v: 视图，负责接收请求进行处理，与m和T交互，返回响应</li>
+<li>T: 模板，负责产生html页面</li>
+</ol>
+<h4 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h4><p>WSGI接口定义，在web框架中定义application函数，接收两个参数，一个包含http请求信息的字典，和一个发生http响应的函数。</p>
+<h4 id="RestFul"><a href="#RestFul" class="headerlink" title="RestFul"></a>RestFul</h4><p>资源表现层状态转化</p>
+<ol>
+<li>资源：表示网络上的资源，比如文字，图片等</li>
+<li>表现层：资源的表现形式，比如html格式，jpg格式等</li>
+<li>状态转换：客户端与服务端交互的过程中，一定会有状态的转化。get表示获取资源，post表示新建资源，put表示更新资源，delete表示删除资源等</li>
+<li>每个url代表一种资源</li>
+<li>客户端和服务端间传递资源的表现形式</li>
+<li>客户端通过http方法对资源进行操作</li>
+</ol>
+<p>restful风格api设计：</p>
+<ol>
+<li>获取商品列表用goods/访问</li>
+<li>获取单个商品用goods/id访问，使用get，post，put，delete对资源进行操作</li>
+</ol>
+<h4 id="与其他框架对比"><a href="#与其他框架对比" class="headerlink" title="与其他框架对比"></a>与其他框架对比</h4><p>django走大而全的方向，开发效率高。它的mtv框架自导orm和admin后台管理和测试用的服务器。功能齐全，成熟稳定，适合做企业级网站开发。</p>
+<p>tornado走少而精的路线，性能优越，采用异步非阻塞的设计方式，支持websocket。</p>
+<p>flask自由灵活可扩展性强，适合做小型网站以及web服务api。</p>
+<h4 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h4><p>csrf跨站请求伪造。用户访问登录正常网站A，A网站返回cookie给浏览器。在没有退出登录的情况下用户范围黑客网站B，B网站要求访问网站A，可以是转账，发消息邮件等表单提交。</p>
+<p>防止csrf攻击：浏览器向后端请求数据时，后端往cookie中设置csrf_token值同时在表单中添加一个隐藏字段值也是csrf_toke,提交表单时会带上这两个值，后端验证这两个值是否相等。黑客网站无法知道csrf的值也就不能伪造表单中的隐藏字段。</p>
+<h4 id="JWT—TOKEN"><a href="#JWT—TOKEN" class="headerlink" title="JWT—TOKEN"></a>JWT—TOKEN</h4><ol>
+<li>优点：不需要服务端存储，支持验证，过期，不可伪造。</li>
+<li>组成：又三部分组成，头部包含类型和签名算法，载荷包含有效信息，签名。</li>
+</ol>
+<h3 id="Liunx命令"><a href="#Liunx命令" class="headerlink" title="Liunx命令"></a>Liunx命令</h3><ol>
+<li>tail 实时查看文本</li>
+<li>cat 查看文本</li>
+<li>grep 查找</li>
+<li>service 服务启动停止重启</li>
+<li>ps 查看进程</li>
+<li>kill 杀死进程</li>
+<li>netstat 查看端口</li>
+<li>find 查找文件</li>
+<li>du 查看文件和目录占用空间</li>
+<li>touch 新建文件</li>
+</ol>
+<h3 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h3><h4 id="curd"><a href="#curd" class="headerlink" title="curd"></a>curd</h4><ol>
+<li>insrt into  表名 （字段名，） values （值，）</li>
+<li>delete from 表名 where 条件</li>
+<li>update 表名 set 字段=值 where 条件</li>
+<li>select * from 表名 where 条件</li>
+</ol>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><ol>
+<li>查询慢建立索引</li>
+<li>避免全表扫描，考虑where 和 order by</li>
+</ol>
+<h3 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
+<li>字符串</li>
+<li>hash</li>
+<li>列表</li>
+<li>集合</li>
+<li>有序集合</li>
+</ol>
+<h4 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h4><p>发布订阅是一种消息通信模式，发布者发送消息，订阅者接收消息。</p>
+<p>直播爬虫爬取房间信息，如果是开播状态将房间地址发布，弹幕爬虫订阅者收到消息，就去爬房间弹幕。</p>
+<h3 id="工作描述："><a href="#工作描述：" class="headerlink" title="工作描述："></a>工作描述：</h3><p>负责直播爬虫的维护，通常接口更新了找新的接口，数据格式变量写新的提取规则，代理IP封了将该ip停一段时间。</p>
+<p>开发了短视频爬虫，爬取快手app和三方平台抖音数据，并做了一个web项目用于展示短视频榜单。</p>
+
       
 
       
@@ -342,6 +465,26 @@
 </aside>
 
 
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="面试复习" data-title="面试复习" data-url="http://yoursite.com/2019/08/16/面试复习/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
