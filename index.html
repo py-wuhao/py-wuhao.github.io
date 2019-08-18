@@ -332,32 +332,52 @@
 <h4 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h4><p>发布订阅是一种消息通信模式，发布者发送消息，订阅者接收消息。</p>
 <p>直播爬虫爬取房间信息，如果是开播状态将房间地址发布，弹幕爬虫订阅者收到消息，就去爬房间弹幕。</p>
 <h3 id="爬虫面试题"><a href="#爬虫面试题" class="headerlink" title="爬虫面试题"></a>爬虫面试题</h3><ol>
-<li>常用的数据库：mysql，redis，mongodb</li>
-<li>爬虫用到的请求库：requests,aiohttp</li>
-<li>爬虫用到的数据解析库：json，re，beautifulSoup</li>
-<li>爬取到的数据用什么数据库存储：看哪个适合需求</li>
-<li>用过的爬虫框架和模块，Scrapy，requests，aiohttp，urllib，selenium，appium</li>
-<li>常见的反爬虫和应对方法：<ol>
+<li><p>常用的数据库：mysql，redis，mongodb</p>
+</li>
+<li><p>爬虫用到的请求库：requests,aiohttp</p>
+</li>
+<li><p>爬虫用到的数据解析库：json，re，beautifulSoup</p>
+</li>
+<li><p>爬取到的数据用什么数据库存储：看哪个适合需求</p>
+</li>
+<li><p>用过的爬虫框架和模块，Scrapy，requests，aiohttp，urllib，selenium，appium</p>
+</li>
+<li><p>常见的反爬虫和应对方法：</p>
+<ol>
 <li>反爬虫根据：请求头，请求频率，ip，cookie，签名</li>
 <li>应对措施：随机更新请求头，使用代理ip池，控制请求频率，cookie池，破解签名</li>
 <li>网站如何制裁爬虫：返回空数据，假数据，验证码，4**状态码</li>
 </ol>
 </li>
-<li>如何处理验证码: 调用打码平台接口识别图片验证码，云打码</li>
-<li>如何处理cookie过期，判断cookie过期抛出异常，捕获异常重新获取cookie</li>
-<li>requests返回的的响应content和text区别，text返回unicode类型，content返回bytes类型<ol>
+<li><p>如何处理验证码: 调用打码平台接口识别图片验证码，云打码</p>
+</li>
+<li><p>如何处理cookie过期，判断cookie过期抛出异常，捕获异常重新获取cookie</p>
+</li>
+<li><p>requests返回的的响应content和text区别，text返回unicode类型，content返回bytes类型</p>
+<ol>
 <li>获取文字用text，根据请求头推测解码方式，图片用content</li>
 <li>获取content可以设置解码方式</li>
 </ol>
 </li>
-<li>json包常用方法：<ol>
+<li><p>json包常用方法：</p>
+<ol>
 <li>dumps  将字典转json字符串</li>
 <li>loads  将json字符串转字典</li>
 <li>dump  将json对象写入文件对象</li>
 <li>load 从文件对象读出json对象</li>
 </ol>
 </li>
-<li>js破解，使用pyexecjs执行js代码</li>
+<li><p>js破解，使用pyexecjs执行js代码</p>
+</li>
+<li><p>参数传递有哪几种</p>
+<p>位置参数、默认参数、可变参数、关键字参数。</p>
+<p>传递的是引用。</p>
+</li>
+<li><p>单引号，双引号，三引号，区别？</p>
+<p>都可以表示字符串，可以嵌套使用内层的不需要转义。</p>
+<p>三引号可以表示多行，不需要连接符，</p>
+<p>三引号可以表示注释。</p>
+</li>
 </ol>
 <h3 id="工作描述："><a href="#工作描述：" class="headerlink" title="工作描述："></a>工作描述：</h3><p>直播观察项目：</p>
 <p>提供主播数据（开播时长，人气，主播画像，收益），发布数据报告和直播相关文章。用于指导精准广告投放，工会管理。</p>
@@ -367,8 +387,9 @@
 <p>用成熟的框架比较简便省心，但满足不了特殊的需求，比如弹幕使用了websocket</p>
 <h3 id="面试总结"><a href="#面试总结" class="headerlink" title="面试总结"></a>面试总结</h3><ol>
 <li>说面试官感兴趣的点，说自己的强项，避开薄弱项。</li>
-<li>面试官会参考现有工资。</li>
+<li>面试官会参考现有工资6k。</li>
 <li>要清楚直播观察项目的作用功能。</li>
+<li>还有什么要了解的，团队人员配置，我负责的内容，五险一金。</li>
 </ol>
 
       
