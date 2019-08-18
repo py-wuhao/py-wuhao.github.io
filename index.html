@@ -169,7 +169,7 @@
 <h4 id="对多进程，多线程，协程的理解"><a href="#对多进程，多线程，协程的理解" class="headerlink" title="对多进程，多线程，协程的理解"></a>对多进程，多线程，协程的理解</h4><ol>
 <li>一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。</li>
 <li>线程是cpu调度的最小单位，线程必须依赖进程存在，线程间可以共享数据。</li>
-<li>协程是一种轻量级的线程，协程的调度完全由用户控制，协程拥有自己的寄存器上下文和栈，协程调度时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈基本没有内核切换的开销，可以不加锁访问全局变量，所以上下文的切换非常快。就像单片机的中断系统，当中断发生将当前程序执行地址压入栈，执行完中断服务程序，从栈中取出地址继续执行。</li>
+<li>协程是一种轻量级的线程，协程的调度完全由用户控制，协程拥有自己的寄存器上下文和栈，协程调度时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈基本没有内核切换的开销，可以不加锁访问全局变量，所以上下文的切换非常快。</li>
 <li>三者关系，进程里有线程，线程里有协程。</li>
 </ol>
 <h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><ol>
@@ -231,7 +231,7 @@
 </ol>
 <h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><h5 id="对响应数据去重"><a href="#对响应数据去重" class="headerlink" title="对响应数据去重"></a>对响应数据去重</h5><ol>
 <li>对数据使用md5生成指纹，使用集合存储指纹。</li>
-<li>如果数据量特别大亿级别，可以使用布隆过滤器，布隆过滤器原理，使用多种算法对数据取余将对应位置1。</li>
+<li>如果数据量特别大亿级别，可以使用布隆过滤器，布隆过滤器原理，使用多种hash算法得到的结果对容量取余将对应位置1。</li>
 <li>simhash 将数据压缩为8字节，根据海明距离判断文本相似度。</li>
 </ol>
 <h5 id="对请求去重"><a href="#对请求去重" class="headerlink" title="对请求去重"></a>对请求去重</h5><ol>
@@ -276,10 +276,10 @@
 <li>v: 视图，负责接收请求进行处理，与m和T交互，返回响应</li>
 <li>T: 模板，负责产生html页面</li>
 </ol>
-<h4 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h4><p>WSGI接口定义，在web框架中定义application函数，接收两个参数，一个包含http请求信息的字典，和一个发生http响应的函数。</p>
+<h4 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h4><p>WSGI接口定义，在web框架中定义application函数，接收两个参数，一个包含http请求信息的字典，和一个发送http响应的函数。</p>
 <h4 id="RestFul"><a href="#RestFul" class="headerlink" title="RestFul"></a>RestFul</h4><p>资源表现层状态转化</p>
 <ol>
-<li>资源：表示网络上的资源，比如文字，图片等</li>
+<li>资源：表示网络上的资源，比如文字，图片，音视频等</li>
 <li>表现层：资源的表现形式，比如html格式，jpg格式等</li>
 <li>状态转换：客户端与服务端交互的过程中，一定会有状态的转化。get表示获取资源，post表示新建资源，put表示更新资源，delete表示删除资源等</li>
 <li>每个url代表一种资源</li>
@@ -291,14 +291,14 @@
 <li>获取商品列表用goods/访问</li>
 <li>获取单个商品用goods/id访问，使用get，post，put，delete对资源进行操作</li>
 </ol>
-<h4 id="与其他框架对比"><a href="#与其他框架对比" class="headerlink" title="与其他框架对比"></a>与其他框架对比</h4><p>django走大而全的方向，开发效率高。它的mtv框架自导orm和admin后台管理和测试用的服务器。功能齐全，成熟稳定，适合做企业级网站开发。</p>
+<h4 id="与其他框架对比"><a href="#与其他框架对比" class="headerlink" title="与其他框架对比"></a>与其他框架对比</h4><p>django走大而全的方向，开发效率高。它的mtv框架自带orm和admin后台管理和测试用的服务器。功能齐全，成熟稳定，适合做企业级网站开发。</p>
 <p>tornado走少而精的路线，性能优越，采用异步非阻塞的设计方式，支持websocket。</p>
 <p>flask自由灵活可扩展性强，适合做小型网站以及web服务api。</p>
 <h4 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h4><p>csrf跨站请求伪造。用户访问登录正常网站A，A网站返回cookie给浏览器。在没有退出登录的情况下用户范围黑客网站B，B网站要求访问网站A，可以是转账，发消息邮件等表单提交。</p>
 <p>防止csrf攻击：浏览器向后端请求数据时，后端往cookie中设置csrf_token值同时在表单中添加一个隐藏字段值也是csrf_toke,提交表单时会带上这两个值，后端验证这两个值是否相等。黑客网站无法知道csrf的值也就不能伪造表单中的隐藏字段。</p>
 <h4 id="JWT—TOKEN"><a href="#JWT—TOKEN" class="headerlink" title="JWT—TOKEN"></a>JWT—TOKEN</h4><ol>
 <li>优点：不需要服务端存储，支持验证，过期，不可伪造。</li>
-<li>组成：又三部分组成，头部包含类型和签名算法，载荷包含有效信息，签名。</li>
+<li>组成：由三部分组成，头部包含类型和签名算法，载荷包含有效信息，签名。</li>
 </ol>
 <h3 id="Liunx命令"><a href="#Liunx命令" class="headerlink" title="Liunx命令"></a>Liunx命令</h3><ol>
 <li>tail 实时查看文本</li>
@@ -355,7 +355,7 @@
 </li>
 <li><p>requests返回的的响应content和text区别，text返回unicode类型，content返回bytes类型</p>
 <ol>
-<li>获取文字用text，根据请求头推测解码方式，图片用content</li>
+<li>获取文字用text，根据请求头自动推测解码方式，图片用content</li>
 <li>获取content可以设置解码方式</li>
 </ol>
 </li>
