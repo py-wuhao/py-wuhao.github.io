@@ -199,16 +199,25 @@
 </li>
 </ol>
 <h4 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h4><ol>
-<li>可迭代对象通过__iter__方法提供迭代器</li>
+<li><p>for语句通过调用容器对象中的iter()方法，该函数返回一个定义了__next__()方法的迭代器对象，该方法将逐一访问容器中的元素。 当元素用尽时，__next__() 将引发 StopIteration 异常来通知终止 for 循环。</p>
+</li>
+<li><p>可迭代对象通过__iter__方法提供迭代器对象</p>
+</li>
 </ol>
 <h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><ol>
 <li>迭代器用于记录每次迭代的位置，使用next()方法返回下一个数据，实际上调用了__next__方法，当迭代完成抛出 StopIteration异常</li>
 </ol>
 <h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><ol>
-<li>列表生成器，字典生成器，元祖生成器</li>
-<li>在函数中使用yield关键字 ，不再函数而是生成器</li>
-<li>yield作用，保存当前状态，暂停执行，将yield后面的 值作为返回值返回</li>
-<li>生成器可以节省内存空间，边循环，边计算</li>
+<li><p><a href="https://docs.python.org/zh-cn/3/glossary.html#term-generator" target="_blank" rel="noopener">Generator</a> 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似标准的函数，自动创建__iter__方法和<em>\</em>next__方法，当迭代终结时自动抛出StopIteration。当要返回数据时会使用 <a href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#yield" target="_blank" rel="noopener"><code>yield</code></a> 语句。 每次对生成器调用 <a href="https://docs.python.org/zh-cn/3/library/functions.html#next" target="_blank" rel="noopener"><code>next()</code></a> 时，它会从上次离开位置恢复执行（它会记住上次执行语句时的所有数据值）。</p>
+</li>
+<li><p>列表生成器，字典生成器，元祖生成器</p>
+</li>
+<li><p>在函数中使用yield关键字 ，不再函数而是生成器</p>
+</li>
+<li><p>yield作用，保存当前状态，暂停执行，将yield后面的 值作为返回值返回</p>
+</li>
+<li><p>生成器可以节省内存空间，边循环，边计算</p>
+</li>
 </ol>
 <h3 id="Scrapy"><a href="#Scrapy" class="headerlink" title="Scrapy"></a>Scrapy</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ol>
 <li>运行机制：爬虫组件从start_url里获取第一批请求，请求由引擎交给调度器入请求队列，获取完毕后，调度器将请求队列里的请求交给下载器去获取请求对应的响应资源，并将响应交给自己编写的解析方法做提取处理：<ol>
