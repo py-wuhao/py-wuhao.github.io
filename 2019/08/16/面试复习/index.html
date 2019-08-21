@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/16/images/scrapy%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/16/images/scrapy%E6%AF%8F%E4%B8%AA%E6%A8%A1%E5%9D%97%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%9C%E7%94%A8.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/16/images/scrapy_redis%E7%9A%84%E6%B5%81%E7%A8%8B.png">
-<meta property="og:updated_time" content="2019-08-19T23:57:53.343Z">
+<meta property="og:updated_time" content="2019-08-21T12:50:45.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试复习">
 <meta name="twitter:description" content="基础知识鸭子类型我们不关心对象的类型，只关心对象的行为。 比如列表的extend() 方法参数可以是列表、元祖字典、字符串、生成器、只要他是可迭代的 对多进程，多线程，协程的理解 一个运行的程序就是一个进程，进程是资源分配的最小单位，所以进程间数据不共享，一个进程至少有一个线程。 线程是cpu调度的最小单位，线程必须依赖进程存在，线程间可以共享数据。 协程是一种轻量级的线程，协程的调度完全由用户控">
@@ -211,7 +211,7 @@
 <li><p>可迭代对象通过__iter__方法提供迭代器对象</p>
 </li>
 </ol>
-<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><ol>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><ol start="2">
 <li>迭代器用于记录每次迭代的位置，使用next()方法返回下一个数据，实际上调用了__next__方法，当迭代完成抛出 StopIteration异常</li>
 </ol>
 <h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><ol>
@@ -219,7 +219,7 @@
 </li>
 <li><p>列表生成器，字典生成器，元祖生成器</p>
 </li>
-<li><p>在函数中使用yield关键字 ，不再函数而是生成器</p>
+<li><p>在函数中使用yield关键字 ，不再函数而是生成器++++++++++++++++++++++++++++++++++++++++++++++</p>
 </li>
 <li><p>yield作用，保存当前状态，暂停执行，将yield后面的 值作为返回值返回</p>
 </li>
@@ -406,6 +406,7 @@
 <li>面试官会参考现有工资6k。</li>
 <li>要清楚直播观察项目的作用功能。</li>
 <li>还有什么要了解的，团队人员配置，我负责的内容，五险一金。</li>
+<li>学会更好的与人沟通表达。</li>
 </ol>
 
       
@@ -514,6 +515,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/08/21/算法图解打卡1day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -632,6 +647,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
