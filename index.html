@@ -144,19 +144,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-算法图解打卡1day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-算法图解打卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/算法图解打卡1day/">算法图解打卡1day</a>
+      <a class="article-title" href="/2019/08/21/算法图解打卡/">算法图解打卡1day</a>
     </h1>
   
 
         
-        <a href="/2019/08/21/算法图解打卡1day/" class="archive-article-date">
+        <a href="/2019/08/21/算法图解打卡/" class="archive-article-date">
   	<time datetime="2019-08-21T12:51:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
 </a>
         
@@ -164,7 +164,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="第一章练习题"><a href="#第一章练习题" class="headerlink" title="第一章练习题"></a>第一章练习题</h3><ol>
+        <h2 id="1day"><a href="#1day" class="headerlink" title="1day"></a>1day</h2><h3 id="第一章练习题"><a href="#第一章练习题" class="headerlink" title="第一章练习题"></a>第一章练习题</h3><ol>
 <li>最多7次</li>
 <li>10个 最多4次</li>
 <li>O(log n)</li>
@@ -181,6 +181,9 @@
 <li>插入很快，但查找还是要遍历一个链表</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选择排序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_element</span><span class="params">(arr: list)</span>:</span></span><br><span class="line">    mix_value = arr[<span class="number">0</span>]</span><br><span class="line">    cursor = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i] &lt; mix_value:</span><br><span class="line">            mix_value = arr[i]</span><br><span class="line">            cursor = i</span><br><span class="line">    <span class="keyword">return</span> cursor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span><span class="params">(arr: list)</span> -&gt; list:</span></span><br><span class="line">    <span class="string">"""每次选出一个最小值"""</span></span><br><span class="line">    new_arr = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">        i = find_element(arr)</span><br><span class="line">        new_arr.append(arr.pop(i))</span><br><span class="line">    <span class="keyword">return</span> new_arr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_list = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line">    sort_list = select_sort(test_list)</span><br><span class="line">    print(sort_list)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2day"><a href="#2day" class="headerlink" title="2day"></a>2day</h2><p>快速排序，取一个基准，将数据划分为左右两侧。一直划分到只有0个或1个元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums: list)</span> -&gt; list:</span></span><br><span class="line">    <span class="keyword">if</span> len(nums) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> nums</span><br><span class="line">    pivot = nums[<span class="number">0</span>]</span><br><span class="line">    l_nums = [v <span class="keyword">for</span> v <span class="keyword">in</span> nums[<span class="number">1</span>:] <span class="keyword">if</span> v&lt;=pivot]</span><br><span class="line">    r_nums = [v <span class="keyword">for</span> v <span class="keyword">in</span> nums[<span class="number">1</span>:] <span class="keyword">if</span> v&gt;pivot]</span><br><span class="line">    <span class="keyword">return</span> quick_sort(l_nums) + [pivot] +quick_sort(r_nums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">res = quick_sort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">55</span>,<span class="number">4</span>,<span class="number">75</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">48</span>,<span class="number">24</span>,<span class="number">7</span>,<span class="number">18</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">8</span>])</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -205,7 +208,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/算法图解打卡1day/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/21/算法图解打卡/">展开全文 >></a>
         </p>
       
 
