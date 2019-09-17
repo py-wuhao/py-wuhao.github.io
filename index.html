@@ -144,6 +144,262 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-爬虫提高" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/17/爬虫提高/">爬虫提高</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/17/爬虫提高/" class="archive-article-date">
+  	<time datetime="2019-09-16T23:06:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h3><ol>
+<li><p>信息摘要算法</p>
+<p>绝对去重</p>
+</li>
+<li><p>simhash算法</p>
+<p>相似文本去重</p>
+</li>
+<li><p>布隆过滤器</p>
+<p>海量数据去重</p>
+</li>
+</ol>
+<h4 id="去重场景"><a href="#去重场景" class="headerlink" title="去重场景"></a>去重场景</h4><ol>
+<li>防止发出重复的请求</li>
+<li>防止存储重复的数据</li>
+</ol>
+<h4 id="去重原理"><a href="#去重原理" class="headerlink" title="去重原理"></a>去重原理</h4><ol>
+<li>去重判断依据 （原始数据，原始数据特征值）</li>
+<li>去重容器（存储判断数据）<ol>
+<li>set 临时去重</li>
+<li>持久化去重</li>
+</ol>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spider</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/17/爬虫提高/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-docker学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/docker学习/">docker学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/10/docker学习/" class="archive-article-date">
+  	<time datetime="2019-09-09T22:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="docker是什么"><a href="#docker是什么" class="headerlink" title="docker是什么"></a>docker是什么</h3><p>docker是开发，运行和部署应用程序的开发管理平台。</p>
+<p>Docker提供了在一个完全隔离的环境中打包和运行应用程序的能力，这个隔离的环境被称为容器。</p>
+<p>由于容器的隔离性和安全性，因此可以在一个主机(宿主机)上同时运行多个相互隔离的容器，互不干预。</p>
+<p>Docker已经提供工具和组件(Docker Client、Docker Daemon等)来管理容器的生命周期。</p>
+<h3 id="docker解决的问题"><a href="#docker解决的问题" class="headerlink" title="docker解决的问题"></a>docker解决的问题</h3><p>保证程序运行环境的一致性；</p>
+<p>降低配置开发环境、生产环境的复杂度和成本；</p>
+<p>实现程序的快速部署和分发。</p>
+<h3 id="docker结构"><a href="#docker结构" class="headerlink" title="docker结构"></a>docker结构</h3><p>采用c/s架构设计，CLI利用Docker命令通过REST API直接操控Docker Daemon执行操作。Docker Daemon负责创建并管理Docker的对象(镜像、容器、网络、数据卷)</p>
+<p><img src="../images/docker%E7%BB%93%E6%9E%84.png" alt="docker结构"></p>
+<p><img src="../images/docker%E7%BB%93%E6%9E%842.png" alt="docker结构2"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/10/docker学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-小知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/小知识点/">小知识点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/03/小知识点/" class="archive-article-date">
+  	<time datetime="2019-09-02T23:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录编码过程中的小知识点</p>
+<ol>
+<li><strong>globals()</strong> 函数会以字典类型返回当前位置的全部全局变量。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/03/小知识点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法图解打卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -665,11 +921,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spider</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
