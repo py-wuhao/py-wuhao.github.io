@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>算法图解打卡1day | 不甘</title>
+  <title>Archives: 2019/10 | 不甘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1day第一章练习题 最多7次 10个 最多4次 O(log n) O(n) O(n) pass  123456789101112131415161718192021# 二分法查找def find_element(source: list, target: int) -&amp;gt; int or None:    index_min = 0    index_max = len(source) - 1">
-<meta name="keywords" content="算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="算法图解打卡1day">
-<meta property="og:url" content="http://yoursite.com/2019/08/21/算法图解打卡/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="不甘">
+<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
 <meta property="og:site_name" content="不甘">
-<meta property="og:description" content="1day第一章练习题 最多7次 10个 最多4次 O(log n) O(n) O(n) pass  123456789101112131415161718192021# 二分法查找def find_element(source: list, target: int) -&amp;gt; int or None:    index_min = 0    index_max = len(source) - 1">
 <meta property="og:locale" content="zh_cn">
-<meta property="og:updated_time" content="2019-08-26T23:51:24.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法图解打卡1day">
-<meta name="twitter:description" content="1day第一章练习题 最多7次 10个 最多4次 O(log n) O(n) O(n) pass  123456789101112131415161718192021# 二分法查找def find_element(source: list, target: int) -&amp;gt; int or None:    index_min = 0    index_max = len(source) - 1">
+<meta name="twitter:title" content="不甘">
   
     <link rel="alternative" href="/atom.xml" title="不甘" type="application/atom+xml">
   
@@ -147,220 +142,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-算法图解打卡" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      算法图解打卡1day
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/10/08/设计原则/" class="archive-article-date">
+  	<time datetime="2019-10-08T00:23:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/10/08/设计原则/">设计原则</a>
     </h1>
   
 
-        
-        <a href="/2019/08/21/算法图解打卡/" class="archive-article-date">
-  	<time datetime="2019-08-21T12:51:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1day"><a href="#1day" class="headerlink" title="1day"></a>1day</h2><h3 id="第一章练习题"><a href="#第一章练习题" class="headerlink" title="第一章练习题"></a>第一章练习题</h3><ol>
-<li>最多7次</li>
-<li>10个 最多4次</li>
-<li>O(log n)</li>
-<li>O(n)</li>
-<li>O(n)</li>
-<li>pass</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二分法查找</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_element</span><span class="params">(source: list, target: int)</span> -&gt; int or <span class="keyword">None</span>:</span></span><br><span class="line">    index_min = <span class="number">0</span></span><br><span class="line">    index_max = len(source) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> index_min &lt;= index_max:</span><br><span class="line">        cursor = (index_max + index_min) // <span class="number">2</span></span><br><span class="line">        value = source[cursor]</span><br><span class="line">        <span class="keyword">if</span> value == target:</span><br><span class="line">            <span class="keyword">return</span> cursor</span><br><span class="line">        <span class="keyword">elif</span> value &gt; target:</span><br><span class="line">            index_max = cursor - <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            index_min = cursor + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_list = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">    res = find_element(test_list, <span class="number">8</span>)</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二章练习题"><a href="#第二章练习题" class="headerlink" title="第二章练习题"></a>第二章练习题</h3><ol start="2">
-<li>链表</li>
-<li>数组</li>
-<li>插入要保证顺序，要将插入位置后面的元素后移，如果开辟的空间不够，得重新开辟更大的空间。</li>
-<li>插入很快，但查找还是要遍历一个链表</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选择排序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_element</span><span class="params">(arr: list)</span>:</span></span><br><span class="line">    mix_value = arr[<span class="number">0</span>]</span><br><span class="line">    cursor = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i] &lt; mix_value:</span><br><span class="line">            mix_value = arr[i]</span><br><span class="line">            cursor = i</span><br><span class="line">    <span class="keyword">return</span> cursor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span><span class="params">(arr: list)</span> -&gt; list:</span></span><br><span class="line">    <span class="string">"""每次选出一个最小值"""</span></span><br><span class="line">    new_arr = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">        i = find_element(arr)</span><br><span class="line">        new_arr.append(arr.pop(i))</span><br><span class="line">    <span class="keyword">return</span> new_arr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_list = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line">    sort_list = select_sort(test_list)</span><br><span class="line">    print(sort_list)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2day"><a href="#2day" class="headerlink" title="2day"></a>2day</h2><p>快速排序，取一个基准，将数据划分为左右两侧。一直划分到只有0个或1个元素。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums: list)</span> -&gt; list:</span></span><br><span class="line">    <span class="keyword">if</span> len(nums) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> nums</span><br><span class="line">    pivot = nums[<span class="number">0</span>]</span><br><span class="line">    l_nums = [v <span class="keyword">for</span> v <span class="keyword">in</span> nums[<span class="number">1</span>:] <span class="keyword">if</span> v&lt;=pivot]</span><br><span class="line">    r_nums = [v <span class="keyword">for</span> v <span class="keyword">in</span> nums[<span class="number">1</span>:] <span class="keyword">if</span> v&gt;pivot]</span><br><span class="line">    <span class="keyword">return</span> quick_sort(l_nums) + [pivot] +quick_sort(r_nums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">res = quick_sort([<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">55</span>,<span class="number">4</span>,<span class="number">75</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">48</span>,<span class="number">24</span>,<span class="number">7</span>,<span class="number">18</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">8</span>])</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3day"><a href="#3day" class="headerlink" title="3day"></a>3day</h2><p>散列表，通过散列函数将键映射为索引。</p>
-<p>散列冲突，将不同键映射到了同一位置，因此在该位置存了一个链表。</p>
-<p>理想条件下散列函数将键均匀映射到散列表的不同位置</p>
-<p>避免冲突需要：较低的填充因子，良好的散列函数</p>
-<p>填充因子=散列表包含元素数/位置总数  通常当填充因子大于0.7时，扩大散列表长度。</p>
-<p>良好的散列函数让数组中的值呈均匀分布。</p>
-<h2 id="4day"><a href="#4day" class="headerlink" title="4day"></a>4day</h2><p>图用于模拟连接。</p>
-<p>图由节点和边组成，一个节点可以和多个节点直接相连，这些节点被称为邻居。</p>
-<p>广度优先搜索</p>
-<p>从一度关系依次向二度关系三度关系查找。</p>
-<p>面临寻找最短路径的问题尝试使用图建立模型，使用广度优先算法解决问题。</p>
-<p>将要查找的对象依次加入队列保证最短路径。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">graph = &#123;&#125;</span><br><span class="line">graph[<span class="string">'a'</span>] = [<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'h'</span>]</span><br><span class="line">graph[<span class="string">'c'</span>] = [<span class="string">'f'</span>, <span class="string">'g'</span>]</span><br><span class="line">graph[<span class="string">'b'</span>] = [<span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">q = deque()</span><br><span class="line">q.extend(graph[<span class="string">'a'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(q)</span>:</span></span><br><span class="line">    used = set()</span><br><span class="line">    <span class="keyword">while</span> len(q):</span><br><span class="line">        e = q.popleft()  <span class="comment"># 取出第一个元素 判断</span></span><br><span class="line">        <span class="keyword">if</span> e <span class="keyword">not</span> <span class="keyword">in</span> used: <span class="comment"># 查找过不再查找</span></span><br><span class="line">            <span class="keyword">if</span> e == <span class="string">'g'</span>:</span><br><span class="line">                print(<span class="string">'yes'</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">else</span>:  <span class="comment"># 不是目标 继续找目标的朋友</span></span><br><span class="line">                <span class="keyword">if</span> graph.get(e):</span><br><span class="line">                    used.add(e)</span><br><span class="line">                    q.extend(graph[e])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    search(q)</span><br></pre></td></tr></table></figure>
-
-<h2 id="5day"><a href="#5day" class="headerlink" title="5day"></a>5day</h2><p>狄克斯特拉算法，寻找图中最短路径</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""构建图"""</span></span><br><span class="line">graph = &#123;&#125;</span><br><span class="line">graph[<span class="string">'start'</span>] = &#123;&#125;</span><br><span class="line">graph[<span class="string">'start'</span>][<span class="string">'a'</span>] = <span class="number">6</span></span><br><span class="line">graph[<span class="string">'start'</span>][<span class="string">'b'</span>] = <span class="number">2</span></span><br><span class="line">graph[<span class="string">'fin'</span>] = &#123;&#125;</span><br><span class="line">graph[<span class="string">'a'</span>] = &#123;&#125;</span><br><span class="line">graph[<span class="string">'a'</span>][<span class="string">'fin'</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">graph[<span class="string">'b'</span>] = &#123;&#125;</span><br><span class="line">graph[<span class="string">'b'</span>][<span class="string">'a'</span>] = <span class="number">3</span></span><br><span class="line">graph[<span class="string">'b'</span>][<span class="string">'fin'</span>] = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 成本</span></span><br><span class="line">costs = &#123;&#125;</span><br><span class="line">infinity = float(<span class="string">'inf'</span>)</span><br><span class="line">costs[<span class="string">'a'</span>] = <span class="number">6</span></span><br><span class="line">costs[<span class="string">'b'</span>] = <span class="number">2</span></span><br><span class="line">costs[<span class="string">'fin'</span>] = infinity</span><br><span class="line"></span><br><span class="line"><span class="comment"># 父节点</span></span><br><span class="line">parents = &#123;&#125;</span><br><span class="line">parents[<span class="string">'a'</span>] = <span class="string">'start'</span></span><br><span class="line">parents[<span class="string">'b'</span>] = <span class="string">'start'</span></span><br><span class="line">parents[<span class="string">'fin'</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理过得节点</span></span><br><span class="line">processde = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_lower_costs_node</span><span class="params">(costs)</span>:</span></span><br><span class="line">    <span class="string">""""找出开销最小的节点"""</span></span><br><span class="line">    lower_costs = infinity</span><br><span class="line">    lower_node = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> node <span class="keyword">in</span> costs:</span><br><span class="line">        <span class="keyword">if</span> costs[node] &lt; lower_costs <span class="keyword">and</span> node <span class="keyword">not</span> <span class="keyword">in</span> processde:</span><br><span class="line">            lower_costs = costs[node]</span><br><span class="line">            lower_node = node</span><br><span class="line">    <span class="keyword">return</span> lower_node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">node = find_lower_costs_node(costs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出邻居节点的开销 更新到该节点的开销</span></span><br><span class="line"><span class="keyword">while</span> node:</span><br><span class="line">    cost = costs[node]</span><br><span class="line">    neighbors = graph[node]</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> neighbors.keys():</span><br><span class="line">        new_cost = cost + neighbors[n]</span><br><span class="line">        <span class="keyword">if</span> new_cost &lt; costs[n]:</span><br><span class="line">            costs[n] = new_cost</span><br><span class="line">            parents[n] = node</span><br><span class="line"></span><br><span class="line">    processde.append(node)</span><br><span class="line">    <span class="comment"># 再次寻找开销最小的节点</span></span><br><span class="line">    node = find_lower_costs_node(costs)</span><br><span class="line"></span><br><span class="line">print(costs)</span><br><span class="line"></span><br><span class="line">path = []</span><br><span class="line">start = parents[<span class="string">'fin'</span>]</span><br><span class="line">path.append(<span class="string">'fin'</span>)</span><br><span class="line"><span class="keyword">while</span> start != <span class="string">'start'</span>:</span><br><span class="line">    path.append(start)</span><br><span class="line">    start = parents[start]</span><br><span class="line">path.append(<span class="string">'start'</span>)</span><br><span class="line">path.reverse()</span><br><span class="line">print(path)</span><br></pre></td></tr></table></figure>
-
-<h2 id="6day"><a href="#6day" class="headerlink" title="6day"></a>6day</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 贪婪算法</span></span><br><span class="line"><span class="comment"># 每步都选择局部最优解，最终得到全局最优解</span></span><br><span class="line"></span><br><span class="line">states_needed = set([<span class="string">"mt"</span>, <span class="string">"wa"</span>, <span class="string">"or"</span>, <span class="string">"id"</span>, <span class="string">"nv"</span>, <span class="string">"ut"</span>, <span class="string">"ca"</span>, <span class="string">"az"</span>])</span><br><span class="line"></span><br><span class="line">stations = &#123;&#125;</span><br><span class="line">stations[<span class="string">"kone"</span>] = set([<span class="string">"id"</span>, <span class="string">"nv"</span>, <span class="string">"ut"</span>])</span><br><span class="line">stations[<span class="string">"ktwo"</span>] = set([<span class="string">"wa"</span>, <span class="string">"id"</span>, <span class="string">"mt"</span>])</span><br><span class="line">stations[<span class="string">"kthree"</span>] = set([<span class="string">"or"</span>, <span class="string">"nv"</span>, <span class="string">"ca"</span>])</span><br><span class="line">stations[<span class="string">"kfour"</span>] = set([<span class="string">"nv"</span>, <span class="string">"ut"</span>])</span><br><span class="line">stations[<span class="string">"kfive"</span>] = set([<span class="string">"ca"</span>, <span class="string">"az"</span>])</span><br><span class="line"></span><br><span class="line">final_stations = set()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> states_needed:</span><br><span class="line">    bast_station = <span class="literal">None</span></span><br><span class="line">    station_covered = set()</span><br><span class="line">    <span class="keyword">for</span> station, states <span class="keyword">in</span> stations.items():</span><br><span class="line">        covered = states_needed &amp; states</span><br><span class="line">        <span class="keyword">if</span> len(covered) &gt; len(station_covered):</span><br><span class="line">            station_covered = covered</span><br><span class="line">            bast_station = station</span><br><span class="line">    states_needed -= station_covered</span><br><span class="line">    final_stations.add(bast_station)</span><br><span class="line"></span><br><span class="line">print(final_stations)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/zfb.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计原则</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/21/算法图解打卡/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/09/03/小知识点/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          小知识点
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/08/16/面试复习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试复习</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -383,8 +218,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
